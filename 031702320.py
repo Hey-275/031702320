@@ -5,7 +5,7 @@ import json
 import pandas as pd
 import numpy as np
 
-str = input()
+str = '2!李四,福建省福州13756899511市鼓楼区鼓西街道湖滨路110号湖滨大厦一层'#.input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
@@ -65,5 +65,5 @@ if list2[0] == '北京市' or '上海市' or '天津市' or '重庆市':
     list2[0] = list2[0][0:2]
 dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
 
-json_dict = json.dumps(dict)
+json_dict = json.dumps(dict,ensure_ascii=False)
 print(json_dict)
