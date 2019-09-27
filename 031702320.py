@@ -25,7 +25,7 @@ else:
     list2 = list1[0]
 
 str_step4 = list2[-1]
-str_step5 = re.search(re.compile(r'街道+|镇+|乡+|苏木+|开发区|合作区|管委会|园区'), str_step4)  # 分离出第四级
+str_step5 = re.search(re.compile(r'街道+|镇+|乡+|苏木+|开发区|合作区|管委会|园区|新区'), str_step4)  # 分离出第四级
 if str_step5 == None:
     list4 = ['']
     list5 = [str_step4]
