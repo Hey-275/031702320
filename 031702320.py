@@ -75,7 +75,7 @@ if list2[0][0:2] == '北京' :
     list2[0] = list2[0][0:2]
     list2[1] = '北京市'
 
-dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
+dict = {'姓名': name.group(), '手机': phone.group(), '地址': list2}
 
 json_dict = json.dumps(dict, ensure_ascii=False)
 print(json_dict)
