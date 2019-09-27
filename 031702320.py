@@ -1,11 +1,13 @@
 import re
-#cooding=utf-8
+# cooding=utf-8
 import cpca
 import json
+
+
 import pandas as pd
 import numpy as np
 
-str =input()
+str ='1!皇甫享,安徽宣城郎13734164891溪县飞鲤镇011乡道西三立村村委会.'# input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
@@ -25,7 +27,7 @@ else:
     list2 = list1[0]
 
 str_step4 = list2[-1]
-str_step5 = re.search(re.compile(r'街道|镇+|乡+|南山区|木|'), str_step4)  # 分离出第四级
+str_step5 = re.search(re.compile(r'街道|镇+|乡+|木+|南山区+'), str_step4)  # 分离出第四级
 if str_step5 == None:
     list4 = ['']
     list5 = [str_step4]
@@ -36,7 +38,7 @@ else:
 
 if str[0] != '1':  # 是否需要继续往下分级
     str_step6 = list5[-1]
-    Match4 = re.search('[路巷街]+', str_step6)
+    Match4 = re.search('[路巷街村]+', str_step6)
 
     if Match4 == None:
         list6 = ['']
@@ -65,5 +67,5 @@ if list2[0] == '北京市' or '上海市' or '天津市' or '重庆市':
     list2[0] = list2[0][0:2]
 dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
 
-json_dict = json.dumps(dict,ensure_ascii=False)
+json_dict = json.dumps(dict, ensure_ascii=False)
 print(json_dict)
