@@ -33,6 +33,9 @@ else:
     x = str_step5.span()
     list4 = [str_step4[0:x[1]]]  # 把关键词之前的地址分成第四级给list4
     list5 = [str_step4[x[1]:]]
+    if list5[0][0]=='道':
+        list5[0]=list5[0][1:]
+        list4[-1]=list4[-1]+'道'
 if list2[0][0:2] not in str_step2:
     list2[0]=''
 if list2[1][0:2] not in str_step2:
