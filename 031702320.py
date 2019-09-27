@@ -74,6 +74,7 @@ if list2[0] == '北京市' :
     list2[0] = list2[0][0:2]
 
 if  Match2.__contains__(list2[1]):
+    1
 else:
     list2[1]=list2[1][0:-1]
 #if not Match2.__contains__(list2[2]):
