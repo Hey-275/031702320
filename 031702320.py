@@ -41,7 +41,7 @@ else:
 #    list2[0]=''
 if list2[1][0:2] not in str_step2:
     list2[1]=''
-if list2[2][0:2] not in str_step2:
+if list2[2][0:3] not in str_step2:
     list2[2] = ''
 if str[0] != '1':  # 是否需要继续往下分级
     str_step6 = list5[-1]
