@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import numpy as np
 
-str ='1!郁蒙层,上海普陀区澳门路288弄河滨围15932819681城.'# input()
+str =input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
