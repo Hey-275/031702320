@@ -62,8 +62,8 @@ del list2[-1]
 list2 = list2 + list4
 list2 = list2 + list5
 
-#if list2[0]!=Match2[0:3]:
- #   list2[0]=list2[0][0:2]
+if not Match2.__contains__(list2[0]):
+    list2[0]=list2[0][0:2]
 if list2[0] == '上海市':
     list2[0] = list2[0][0:2]
 if list2[0] == '天津市':
