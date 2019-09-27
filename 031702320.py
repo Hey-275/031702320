@@ -65,6 +65,14 @@ list2 = list2 + list4
 list2 = list2 + list5
 #if list2[0] == '北京市' or '上海市' or '天津市' or '重庆市':
     #list2[0] = list2[0][0:2]
+if list2[0] == '上海市':
+    list2[0] = list2[0][0:2]
+if list2[0] == '天津市':
+    list2[0] = list2[0][0:2]
+if list2[0] == '重庆市':
+    list2[0] = list2[0][0:2]
+if list2[0] == '北京市' :
+    list2[0] = list2[0][0:2]
 dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
 
 json_dict = json.dumps(dict, ensure_ascii=False)
