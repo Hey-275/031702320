@@ -7,17 +7,15 @@ import json
 import pandas as pd
 import numpy as np
 
-str =input()
+str ='1!琴阻壶,四川成都门头沟区斋堂镇新兴村村委13045173514会中共新兴村支部委员会.'# input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
 name = re.search('[^,]+', str[2:])
 phone = re.search('\d{11}', str)
 Match2 = re.sub('\.', '', str_step2)
-
 str_step3 = cpca.transform([Match2], cut=False, open_warning=False)  # 调用cpca模块分出地址簿前三级
 list1 = str_step3.values.tolist()
-
 if (list1[0][0][0:2] == Match2[0:2]):
     list2 = list1[0]
 
@@ -63,8 +61,9 @@ if str[0] != '1':  # 是否需要继续往下分级
 del list2[-1]
 list2 = list2 + list4
 list2 = list2 + list5
-#if list2[0] == '北京市' or '上海市' or '天津市' or '重庆市':
-    #list2[0] = list2[0][0:2]
+
+if list2[0]!=Match2[0:3]:
+    list2[0]=list2[0][0:2]
 if list2[0] == '上海市':
     list2[0] = list2[0][0:2]
 if list2[0] == '天津市':
@@ -73,6 +72,11 @@ if list2[0] == '重庆市':
     list2[0] = list2[0][0:2]
 if list2[0] == '北京市' :
     list2[0] = list2[0][0:2]
+
+if not Match2.__contains__(list2[1]):
+    list2[1]=list2[1][0:-1]
+if not Match2.__contains__(list2[2]):
+    list2[2]=list2[2][0:-1]
 dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
 
 json_dict = json.dumps(dict, ensure_ascii=False)
