@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import numpy as np
 
-str ='1!皇甫享,安徽宣城郎13734164891溪县飞鲤镇011乡道西三立村村委会.'# input()
+str =input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
