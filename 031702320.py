@@ -66,12 +66,16 @@ if not Match2.__contains__(list2[0]):
     list2[0]=list2[0][0:-1]
 if list2[0] == '上海市':
     list2[0] = list2[0][0:2]
+    list2[1]='上海市'
 if list2[0] == '天津市':
     list2[0] = list2[0][0:2]
+    list2[1] = '天津市'
 if list2[0] == '重庆市':
     list2[0] = list2[0][0:2]
+    list2[1] = '重庆市'
 if list2[0] == '北京市' :
     list2[0] = list2[0][0:2]
+    list2[1] = '北京市'
 
 #if  Match2.__contains__(list2[1]):
    # 1
