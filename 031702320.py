@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import numpy as np
 
-str ='1!琴阻壶,四川成都门头沟区斋堂镇新兴村村委13045173514会中共新兴村支部委员会.'# input()
+str =input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
