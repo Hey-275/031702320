@@ -5,7 +5,7 @@ import json
 import pandas as pd
 import numpy as np
 
-str = '2!李四,福建省福州13756899511市鼓楼区鼓西街道湖滨路110号湖滨大厦一层'#.input()
+str =input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
