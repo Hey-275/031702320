@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import numpy as np
 
-str =input()
+str ='1!郁蒙层,上海普陀区澳门路288弄河滨围15932819681城.'# input()
 Match1 = re.search('[^,]+$', str)
 str_step1 = Match1.group()
 str_step2 = re.sub('\d{11}|', '', str_step1)
@@ -62,30 +62,29 @@ del list2[-1]
 list2 = list2 + list4
 list2 = list2 + list5
 
-#if not Match2.__contains__(list2[0]):
- #   if list2[-1]=='区'：
-  #  list2[0]=list2[0][0:-3]
-  #  else：
-  #  list2[0]=list2[0][0:-1]
-if list2[0] == '上海市'：
+if not Match2.__contains__(list2[0]):
+    if list2[0][-1]=='区':
+        list2[0]=list2[0][0:-3]
+    else :
+        list2[0]=list2[0][0:-1]
+
+if not Match2.__contains__(list2[1]):
+    list2[1]=list2[1][0:-1]
+if not Match2.__contains__(list2[2]):
+    list2[2]=list2[2][0:-1]
+if list2[0][0:2] == '上海':
     list2[0] = list2[0][0:2]
     list2[1]='上海市'
-if list2[0] == '天津市':
+if list2[0][0:2] == '天津':
     list2[0] = list2[0][0:2]
     list2[1] = '天津市'
-if list2[0] == '重庆市':
+if list2[0][0:2] == '重庆':
     list2[0] = list2[0][0:2]
     list2[1] = '重庆市'
-if list2[0] == '北京市' :
+if list2[0][0:2] == '北京' :
     list2[0] = list2[0][0:2]
     list2[1] = '北京市'
 
-#if  Match2.__contains__(list2[1]):
-   # 1
-#else:
-  #  list2[1]=list2[1][0:-1]
-if not Match2.__contains__(list2[2]):
-    list2[2]=list2[2][0:-1]
 dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
 
 json_dict = json.dumps(dict, ensure_ascii=False)
