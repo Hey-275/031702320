@@ -73,10 +73,10 @@ if list2[0] == '重庆市':
 if list2[0] == '北京市' :
     list2[0] = list2[0][0:2]
 
-if not Match2.__contains__(list2[1]):
-    list2[1]=list2[1][0:-1]
-if not Match2.__contains__(list2[2]):
-    list2[2]=list2[2][0:-1]
+#if not Match2.__contains__(list2[1]):
+  #  list2[1]=list2[1][0:-1]
+#if not Match2.__contains__(list2[2]):
+   # list2[2]=list2[2][0:-1]
 dict = {'姓名': name.group(), '手机号码': phone.group(), '地址': list2}
 
 json_dict = json.dumps(dict, ensure_ascii=False)
