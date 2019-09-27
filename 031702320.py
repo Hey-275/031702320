@@ -68,8 +68,6 @@ if not Match2.__contains__(list2[0]):
     else :
         list2[0]=list2[0][0:-1]
 
-if not Match2.__contains__(list2[1]):
-    list2[1]=list2[1][0:-1]
 if not Match2.__contains__(list2[2]):
     list2[2]=list2[2][0:-1]
 if list2[0][0:2] == '上海':
