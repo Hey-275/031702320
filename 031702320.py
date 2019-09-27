@@ -16,6 +16,8 @@ phone = re.search('\d{11}', str)
 Match2 = re.sub('\.', '', str_step2)
 if Match2[0:2]=='吉林':
     Match2=Match2[2:]
+    if Match2[0]=='省':
+        Match2=Match[1:]
 str_step3 = cpca.transform([Match2], cut=False, open_warning=False)  # 调用cpca模块分出地址簿前三级
 list1 = str_step3.values.tolist()
 if (list1[0][0][0:2] == Match2[0:2]):
