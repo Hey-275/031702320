@@ -30,7 +30,7 @@ def getaddr_5(str):
     if str_step5 == None:
         list2[3] = ['']
         list5 = [str_step4]
-       # print(list2)
+        #print(list2)
     else:
         x = str_step5.span()
         list2[-1] = [str_step4[0:x[1]]]  # 把关键词之前的地址分成第四级给list4
@@ -46,7 +46,7 @@ def getaddr_5(str):
     if list2[2][0:3] not in str_step2:
         list2[2] = ''
     list2=list2+list5
-   # print(list2)
+    #print(list2,'1')
     return list2
 
 def getaddr_7(list5):
@@ -99,7 +99,7 @@ def get_phone(str):
     phone = re.search('\d{11}', str)
     return phone.group()
 
-str=input()
+str='1!皇甫享,安徽宣城郎13734164891溪县飞鲤镇011乡道西三立村村委会.'#input()
 name=get_name(str)
 phone=get_phone(str)
 addr=getaddr_5(str)
