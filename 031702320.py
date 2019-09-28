@@ -24,13 +24,13 @@ def getaddr_5(str):
         str_step3 = cpca.transform([Match2], open_warning=False)  # 调用cpca模块分出地址簿前三级
         list1 = str_step3.values.tolist()
         list2 = list1[0]
-    print(list1)
+    #print(list1)
     str_step4 = list2[-1]
     str_step5 = re.search(re.compile(r'街道+|镇+|乡+|苏木+|开发区|合作区|管委会|园区'), str_step4)  # 分离出第四级
     if str_step5 == None:
         list2[3] = ['']
         list5 = [str_step4]
-        print(list2)
+       # print(list2)
     else:
         x = str_step5.span()
         list4 = [str_step4[0:x[1]]]  # 把关键词之前的地址分成第四级给list4
@@ -46,7 +46,7 @@ def getaddr_5(str):
     if list2[2][0:3] not in str_step2:
         list2[2] = ''
     list2=list2+list5
-    print(list2)
+   # print(list2)
     return list2
 
 def getaddr_7(list5):
@@ -105,9 +105,9 @@ phone=get_phone(str)
 addr=getaddr_5(str)
 if str[0]!='1':# 是否需要继续往下分级
     addr=addr+getaddr_7(addr)
-print(addr)
+#print(addr)
 addr=Special_sentence(addr)
-print(addr)
+#print(addr)
 dict = {'姓名': name, '手机': phone, '地址': addr}
 
 json_dict = json.dumps(dict, ensure_ascii=False)
