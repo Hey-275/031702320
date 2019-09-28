@@ -99,7 +99,7 @@ def get_phone(str):
     phone = re.search('\d{11}', str)
     return phone.group()
 
-str='1!小美,北京市东15822153326城区交道口东大街1号北京市东城区人民法院.'#input()
+str=input()
 name=get_name(str)
 phone=get_phone(str)
 addr=getaddr_5(str)
