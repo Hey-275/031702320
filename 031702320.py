@@ -50,8 +50,8 @@ def getaddr(str):
             if list5[0][0]=='道':
                 list5=[str_step4]
                 list4=['']
-    if list2[0][0:2] not in str_step2:
-        list2[0]=''
+    #if list2[0][0:2] not in str_step2:
+        #list2[0]=''
     if list2[1][0:2] not in str_step2:
         list2[1]=''
     if list2[2][0:3] not in str_step2:
