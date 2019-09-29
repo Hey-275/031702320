@@ -23,10 +23,10 @@ def getaddr(str):
     str_step1 = Match1.group()
     str_step2 = re.sub('\d{11}|', '', str_step1)
     Match2 = re.sub('\.', '', str_step2)
-    #if Match2[0:2]=='吉林':
-        #Match2=Match2[2:]
-        #if Match2[0]=='省':
-            #Match2=Match2[1:]
+    if Match2[0:2]=='吉林':
+        Match2=Match2[2:]
+        if Match2[0]=='省':
+            Match2=Match2[1:]
     str_step3 = cpca.transform([Match2], cut=False, open_warning=False)  # 调用cpca模块分出地址簿前三级
     list1 = str_step3.values.tolist()
     if (list1[0][0][0:2] == Match2[0:2]):
@@ -50,8 +50,8 @@ def getaddr(str):
             if list5[0][0]=='道':
                 list5=[str_step4]
                 list4=['']
-#if list2[0][0:2] not in str_step2:
-#    list2[0]=''
+    if list2[0][0:2] not in str_step2:
+        list2[0]=''
     if list2[1][0:2] not in str_step2:
         list2[1]=''
     if list2[2][0:3] not in str_step2:
