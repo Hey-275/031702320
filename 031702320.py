@@ -99,12 +99,11 @@ def getaddr(str):
     return list2
 
 while(1):
-    try:
-        strtr=input()
-        if(str=="END"):
+    
+    strtr=input()
+    if(str=="END"):
             break
-    except:
-        break
+    
     str =input()
     name=getname(str)
     phone=getphone(str)
