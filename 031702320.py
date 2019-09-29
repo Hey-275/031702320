@@ -100,7 +100,7 @@ def getaddr(str):
 
 while(1):
     
-    strtr=input()
+    str=input()
     if(str=="END"):
             break
     
