@@ -98,10 +98,17 @@ def getaddr(str):
         list2[1] = '北京市'
     return list2
 
-str =input()
-name=getname(str)
-phone=getphone(str)
-addr=getaddr(str)
-dict = {'姓名': name, '手机': phone, '地址': addr}
-json_dict = json.dumps(dict, ensure_ascii=False)
-print(json_dict)
+while(1):
+    try:
+        strtr=input()
+        if(str=="END"):
+            break
+    except:
+        break
+    str =input()
+    name=getname(str)
+    phone=getphone(str)
+    addr=getaddr(str)
+    dict = {'姓名': name, '手机': phone, '地址': addr}
+    json_dict = json.dumps(dict, ensure_ascii=False)
+    print(json_dict)
