@@ -104,10 +104,10 @@ while(1):
     if(str=="END"):
             break
     
-    else:
-        name=getname(str)
-        phone=getphone(str)
-        addr=getaddr(str)
-        dict = {'姓名': name, '手机': phone, '地址': addr}
-        json_dict = json.dumps(dict, ensure_ascii=False)
-        print(json_dict)
+    
+    name=getname(str)
+    phone=getphone(str)
+    addr=getaddr(str)
+    dict = {"姓名": name, "手机": phone, "地址": addr}
+    json_dict = json.dumps(dict, ensure_ascii=False)
+    print(json_dict)
