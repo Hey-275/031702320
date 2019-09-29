@@ -104,7 +104,7 @@ while(1):
     if(str=="END"):
             break
     
-    str =input()
+    
     name=getname(str)
     phone=getphone(str)
     addr=getaddr(str)
